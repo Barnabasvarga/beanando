@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Varga Barnabás">
+    <meta name="description" content="Ez egy Jordan cipőkről szól">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="jQuery-galeria/slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="jQuery-galeria/slick-1.8.1/slick/slick.css">
+    <link rel="icon" href="images/favicon/icon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jQuery-galeria/slick.min.js"></script>
+    <title>Kérdőív</title>
+</head>
+
+<body>
+    <header id="header">
+        <h1>Jordan: A legenda és a márka története</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="karrier.html">Karrier</a></li>
+            <li><a href="kollaboracio.html">Kollaborációk</a></li>
+            <li><a href="tervezz.html">Tervezz</a></li>
+            <li><a href="#" id="active">Kérdőív</a></li>
+        </ul>
+    </nav>
+    <hr class="vonal">
+    <div id="kerdoiv">
+        <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="myform">
+
+            <h2>Kérlek töltsd ki az alábbi kérdőívet:</h2>
+            Hallottál már Michael Jordan-ről?
+            <br>
+            <label>
+                <input type="radio" name="hallote" value="igen">Igen</label>
+            <label>
+                <input type="radio" name="hallote" value="nem" checked>Nem</label>
+            <br>
+            <br>
+            Szereted a cipőket?
+            <br>
+            <label>
+                <input type="radio" name="Szereted" value="igen">Igen</label>
+            <label>
+                <input type="radio" name="Szereted" value="semleges" checked>Semleges</label>
+            <label><input type="radio" name="Szereted" value="nem" checked>Nem</label>
+            <br>
+            <br>
+            <label>Mi a nemed? </label>
+            <br>
+            <select name="nem">
+                <option value="" selected disabled>Válassz...</option>
+                <option value="férfi">Férfi</option>
+                <option value="nő">Nő</option>
+                <option value="Egyedi">Más</option>
+            </select>
+            <br>
+            <br>
+            <label>Add meg, hogy mikor születtél:
+                <br> <input type="date" name="datum" id="datum"></label>
+            <br>
+            <br>
+            <label id="maxkiadas">Mennyit adnál ki maximum egy cipőért?</label>
+            <br>
+            <input type="number" name="maxkiadas" min="1" placeholder="(ezer Ft)">
+            <br>
+            <br>
+            <label id="foszempont">Melyek a legfontosabb szempontjaid egy cipő vásárlásakor?</label>
+            <br>
+            <select name="szempontok">
+                <option value="" selected disabled>Válassz...</option>
+                <option value="ár">Ár</option>
+                <option value="">Kényelem</option>
+                <option value="">Minőség/Márka</option>
+                <option value="">Hírességek általi promóció</option>
+                <option value="">Limitált kiadás/specialitás</option>
+            </select>
+            <br>
+            <br>
+            Van Jordan terméked?
+            <br>
+            <label><input type="radio" name="vanjordan" value="igen">Igen</label>
+            <label><input type="radio" name="vanjordan" value="nem" checked>Nem</label>
+            <br>
+            <br>
+            <p>Milyen platformokon követed a Jordan márkát?</p>
+            <label><input type="checkbox" name="platforms[]" value="facebook"> Facebook</label><br>
+            <label><input type="checkbox" name="platforms[]" value="instagram"> Instagram</label><br>
+            <label><input type="checkbox" name="platforms[]" value="tiktok"> TikTok</label><br>
+            <label><input type="checkbox" name="platforms[]" value="youtube"> YouTube</label><br>
+            <label><input type="checkbox" name="platforms[]" value="twitter"> Twitter</label><br>
+            <label><input type="checkbox" name="platforms[]" value="none"> Nem követem a márkát</label><br>
+            <br>
+            <br>
+            <label id="jordan-models">Melyik Jordan modell tetszett a leginkább?</label>
+            <select name="jordan-model">
+                <option value="" selected disabled>Válassz</option>
+                <option value="jordan1">Air Jordan 1</option>
+                <option value="jordan3">Air Jordan 3</option>
+                <option value="jordan4">Air Jordan 4</option>
+                <option value="jordan6">Air Jordan 6</option>
+                <option value="jordan11">Air Jordan 11</option>
+                <option value="other">Egyik sem</option>
+            </select>
+            <br>
+            <br>
+            <label>Mennyire tetszett a weboldal?</label>
+            <br>
+            <input type="range" name="tetszett" id="tetszett">
+            <br>
+            <br>
+            <label for="feedback">Van valamilyen javaslatod vagy megjegyzésed?</label>
+            <br>
+            <textarea id="feedback" name="feedback" rows="4" cols="30"
+                placeholder="Írd ide a véleményedet..."></textarea>
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Küldés">
+            <input type="reset" name="reset" id="Visszaállítás">
+
+        </form>
+    </div>
+    <hr class="vonal">
+    <div id="galeria">
+        <h2 class="alcím">Néhány ikonikus darab:</h2>
+        <section class="center slider">
+            <div><img src="jQuery-galeria/galeriakepek/j1fearless.jpg" alt="Jordan 1 fearless">
+                <p class="caption">Jordan 1 High "Fearless"</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j2ow.jpg" alt="Jordan 2">
+                <p class="caption">Jordan 2 x Off-White</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j5ow.jpg" alt="Jordan 5">
+                <p class="caption">Jordan 5 x Off-White</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j4maniere.jpg" alt="Maniére x Air Jordan 4">
+                <p class="caption">A Ma Maniére x Air Jordan 4</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j4pinegreen.jpg" alt="Jordan 4 sb">
+                <p class="caption">Jordan 4 sb "Pine Green"</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j4paris.jpg" alt="Jordan 4 Paris">
+                <p class="caption">Jordan 4 Paris Olimpics editon</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j1notforresale.jpg" alt="Not for resale Jordan 1">
+                <p class="caption">Jordan 1 High "Not for resale"</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j1blacktoe.jpg" alt="Jordan 1 Black Toe">
+                <p class="caption">Jordan 1 High "Black Toe"</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j1spider.jpg" alt="jordan 1 Spiderman">
+                <p class="caption">Jordan 1 High "Spiderman"</p>
+            </div>
+            <div><img src="jQuery-galeria/galeriakepek/j1hpyerroyale.jpg" alt="Hyper royale Jordan 1">
+                <p class="caption">Jordan 1 "Hyper Royale"</p>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jQuery-galeria/slick-1.8.1/slick/slick.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".center").slick({
+                dots: false,
+                infinite: true,
+                centerMode: true,
+                centerPadding: '20px',
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1800,
+
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerPadding: '60px',
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            arrows: false,
+                            centerPadding: '60px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+    <div class="button">
+        <button id="ugras6">Ugrás az oldal tetejére</button>
+    </div>
+    <script src="script/script_kerdoiv.js"></script>
+    <footer id="footer">
+        <p>Sport, stílus, kultúra. A Jordan nem csupán cipő, hanem életstílus. Lépj be, és találd meg a saját utadat!
+            &copy; Varga Barnabás 2024 Corvinus</p>
+    </footer>
+</body>
+
+</html>

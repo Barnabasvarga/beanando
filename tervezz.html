@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Varga Barnabás">
+    <meta name="description" content="Ez egy Jordan cipőkről szól">
+    <title>Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon/icon.png" type="image/x-icon">
+    <script src="validation/jquery-3.7.1.js"></script>
+    <script src="validation/jquery-validation-1.19.5/dist/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myform").validate({
+                rules: {
+                    vezeteknev: "required",
+                    keresztnev: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    enged: {
+                        required: true,
+                    },
+                    platform: {
+                        required: true
+                    },
+                    message: {
+                        required: true,
+                        minlength: 8
+                    }
+                },
+                messages: {
+                    vezeteknev: "Írd be a vezetékneved!",
+                    keresztnev: "Írd be a keresztneved!",
+                    email: "Kérlek valós email címet adj meg!",
+                    enged: "Kérlek fogadd el a hírleveleket!",
+                    platform: "Kérlek válassz egy platformot, ahol követsz minket!",
+                    message: {
+                        required: "Írd le a véleményedet!",
+                        minlength: "A válaszodnak legalább 8 karakterből kell állnia!"
+                    }
+                },
+                errorPlacement: function(error, radio) {
+                    if (radio.attr("name") === "platform") {
+                        error.appendTo("#platform-error"); // A hibaüzenetet ide helyezi
+                    } else {
+                        error.insertAfter(radio); // Alapértelmezett elhelyezés más elemeknél
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        label.error {
+            color: #FB3A3A;
+        }
+        .error {
+            color: #FB3A3A;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>Jordan: A legenda és a márka története</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="karrier.html">Karrier</a></li>
+            <li><a href="kollaboracio.html">Kollaborációk</a></li>
+            <li><a href="#" id="active">Tervezz</a></li>
+            <li><a href="kerdoiv.html">Kérdőív</a></li>
+        </ul>
+    </nav>
+    <hr class="vonal">
+    <div id="nyeremenyjatek">
+        <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="myform" novalidate>
+            <article>
+                <h2>Nyerj egy pár Jordan 1 "Lost and found" sneakert!</h2>
+                <p>Szeretnéd megszerezni a legendás Jordan 1 cipőt? Most itt az alkalom! Vegyél részt
+                    nyereményjátékunkban<br> és tiéd lehet ez a különleges modell az általad választott méretben. Töltsd
+                    ki az alábbi űrlapot a jelentkezéshez.</p>
+                <p>
+                    <label for="vezeteknev">Add meg a vezetékneved:</label>
+                    <input type="text" name="vezeteknev" id="vezeteknev" placeholder="(pl: Jordan)"> <br>
+                </p>
+                <p>
+                    <label for="keresztnev">Add meg a keresztneved:</label>
+                    <input type="text" name="keresztnev" id="keresztnev" placeholder="(pl: Michael)"> <br>
+                </p>
+                <p>
+                    <label for="email">Add meg az e-mail címed:</label>
+                    <input type="text" name="email" id="email" placeholder="(sample@gmail.com)"> <br>
+                </p>
+                <p>Hol követsz minket?</p>
+                <p>
+                    <label>
+                        <input type="radio" name="platform" value="Instagram"> Instagram
+                    </label>
+                    <label>
+                        <input type="radio" name="platform" value="Facebook"> Facebook
+                    </label>
+                    <label>
+                        <input type="radio" name="platform" value="Twitter/X"> Twitter/X
+                    </label>
+                    <br>
+                    <span id="platform-error" class="error"></span>
+                </p>
+                <p>
+                    <label for="message">Véleményed a Jordan termékekről?</label><br>
+                    <textarea name="message" id="message" placeholder="Írd le a véleményedet..." rows="4"></textarea> <br>
+                </p>
+                <p>
+                    <label for="enged">Engedélyezem a legújabb Jordan megjelenésekről szóló e-mail-eket. </label>
+                    <input type="checkbox" name="enged" id="enged"> <br>
+                </p>
+                <input type="submit" name="submit" value="Küldés">
+                <input type="reset" name="reset" id="Visszaállítás">
+                <p>(A nyertest a megadott e-mail címen keresztül értesítjük.)</p>
+            </article>
+        </form>
+        <figure>
+            <img src="images/desing/lostandfoundjordan.jpg" alt="A nyereménycipő képe" class="nagyit">
+            <figcaption>Air Jordan 1 "Lost and Found"</figcaption>
+        </figure>
+    </div>
+    <hr class="vonal">
+    <div id="tervezonezet">
+        <h1>Melyik Jordan illene hozzád?</h1>
+        <div class="flex-item">
+            <h2 class="alcím">Melyik cipő kialakítása nyerte el a tetszésed?<br>(kattintással tudod kiválasztani)</h2>
+            <div class="gallery" id="modell">
+                <img src="images/desing/uncolouredj1.jpg" alt="Jordan 1 üres" data-style="1">
+                <img src="images/desing/uncolouredj3.jpg" alt="Jordan 3 üres" data-style="2">
+                <img src="images/desing/uncolouredj4.jpg" alt="Jordan 4 üres" data-style="3">
+                <img src="images/desing/uncolouredj6.jpg" alt="Jordan 6 üres" data-style="4">
+                <img src="images/desing/uncolouredj11.jpg" alt="Jordan 11 üres" data-style="5">
+            </div>
+        </div>
+        <div class="flex-item">
+            <h2 class="alcím">Válaszd ki a kedvenc színedet:</h2>
+            <div class="gallery" id="colour">
+                <img src="images/desing/fehér.jpg" alt="Paletta 1" data-color="1">
+                <img src="images/desing/fekete.jpg" alt="Paletta 2" data-color="2">
+                <img src="images/desing/piros.jpg" alt="Paletta 3" data-color="3">
+                <img src="images/desing/kek.jpg" alt="Paletta 4" data-color="4">
+                <img src="images/desing/rozsaszin.jpg" alt="Paletta 5" data-color="5">
+            </div>
+        </div>
+        <button id="ajanlas">Melyik Jordan illik hozzám?</button>
+        <div class="eredmeny" id="eredmeny"></div>
+    </div>
+    <div class="button">
+        <button id="ugras5">Ugrás az oldal tetejére</button>
+      </div>
+    <script src="script/script_tervezz.js"></script>
+    <footer id="footer">
+        <p>Sport, stílus, kultúra. A Jordan nem csupán cipő, hanem életstílus. Lépj be, és találd meg a saját utadat! &copy; Varga Barnabás 2024 Corvinus</p>
+    </footer>
+</body>
+
+</html>
