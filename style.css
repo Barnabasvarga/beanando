@@ -169,9 +169,10 @@ img.nagyit:hover {
     flex-direction: column;
     background-color: #F5F5F5;
     max-width: 800px;
-    margin: 20px ;
+    margin: 10px ;
     padding: 30px;
     border-radius: 20px;
+    text-align: center;
 }
 
 video {
@@ -602,6 +603,9 @@ button:hover {
 
     nav li a {
         font-size: 19px;
+    }
+    .video{
+        margin: auto;
     }
 
     .timeline:after {
