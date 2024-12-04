@@ -5,7 +5,7 @@
 3) A weboldalam Michael Jordan legendás kosárlabda játékos életét és a Nike-val közösen alkotott márkájának történét mutatja be. A kezdetektől egészen a napjainkig betekintést nyerhetünk a meghatározó eseményekbe, majd lehetőség van saját ízlésünk szerint egy Jordan cipőt is készíteni.
 
 4) A "Tervezz" weboldalon talákható a fő Javascript kódom ami egy cipőtípus és egy színválasztás után kiírja, a már kapható cipő nevét, illetve egy képet is beilleszt róla a gomb lenyomása után. A kép alatt megjeleníti a piaci árát illetve egy linken keresztül a jelenlegi árat a világpiacon.  Amíg nincs kiválasztva a stílus vagy a szín, vagy egyik sem, akkor kiírja, hogy a választás szükséges, illetve csináltam egy olyan ágat is, hogyha nem talál megfelelő kombinációt, de ez jelenleg nem áll fenn. 
-A többi oldalon megtalálható gombok felgörgetése szintén JS kóddal készült.
+A többi oldalon megtalálható gombok felgörgetése szintén JS kóddal készült. Illetve az első oldalon kívül az összesen a video egy mouseover effektussal elindul illetve megáll.
 
 5) Egy "Poppins" nevű Google web fontot használtam az egész beadandóm során: https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap
 

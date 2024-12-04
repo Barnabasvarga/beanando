@@ -1,7 +1,6 @@
 /* Font importálása */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
 
-/* Alapértelmezett stílusok */
 * {
     box-sizing: border-box;
 }
@@ -144,7 +143,6 @@ div#nyeremenyjatek article {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Lábléc */
 #footer {
     display: flex;
     justify-content: center;
@@ -169,7 +167,7 @@ img.nagyit:hover {
     flex-direction: column;
     background-color: #F5F5F5;
     max-width: 800px;
-    margin: 10px ;
+    margin: 10px;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
@@ -195,9 +193,12 @@ video {
 }
 
 .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: auto;
+    padding: 0 10px;
     position: relative;
-    max-width: 1200px;
-    margin: auto
 }
 
 /* Középvonal kialakítása */
@@ -205,75 +206,46 @@ video {
     content: '';
     position: absolute;
     width: 5px;
-    background-color: #F5F5F5;
-    top: 20px;
+    background-color: #CEE6F2;
+    top: 0;
     bottom: 0;
-    left: 31px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
 
 /* Idővonal konténerek */
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     position: relative;
-    padding-left: 70px;
-    padding-right: 25px;
-}
-
-.container::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: #CEE6F2;
-    border: 5px solid #F5F5F5;
-    top: 35px;
-    border-radius: 10px;
-    z-index: 1;
-    left: 50%;
-
-
-}
-
-/* Bal és jobb oldali konténerek */
-.left {
-    left: 0%;
-}
-
-.right {
-    left: 0%;
-}
-
-.left::after,
-.right::after {
-    left: 15px;
+    width: 100%;
 }
 
 /* Konténer tartalma */
 .content {
     padding: 20px;
     background-color: #F5F5F5;
-    position: relative;
     border-radius: 20px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    flex-basis: 100%;
 }
 
 /* Képek a konténereken belül */
 .image {
-    position: relative;
-    margin: 20px;
-    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image img {
     width: 100%;
+    max-width: 400px;
     border-radius: 20px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-.container.left .image,
-.container.right .image {
-    right: auto;
-    left: auto;
 }
 
 /* Gombok */
@@ -306,9 +278,7 @@ video {
 #ugras3:hover,
 #ugras4:hover,
 #ugras5:hover,
-#ugras6:hover
-
- {
+#ugras6:hover {
     background-color: #F1F1F2;
 }
 
@@ -344,7 +314,6 @@ video {
 
 }
 
-
 #jordan4 article,
 #jordan1 article,
 #jordantravis article,
@@ -359,7 +328,6 @@ video {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 
 }
-
 
 #jordan4 img,
 #jordan1 img,
@@ -377,7 +345,6 @@ video {
 
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 }
-
 
 #kepek img.original,
 #kepek2 img.original,
@@ -432,10 +399,8 @@ video {
 }
 
 #kerdoiv article {
-
     padding: 10px;
     border-radius: 20px;
-
 }
 
 
@@ -475,9 +440,7 @@ h1 {
     padding: 30px;
 }
 
-
 .gallery img {
-
     max-width: 100%;
     height: auto;
     margin: 0;
@@ -501,7 +464,7 @@ h1 {
 
 /* Gomb és eredmény stílus */
 button {
-    margin:  auto;
+    margin: auto;
     text-align: center;
     padding: 20px;
     border: none;
@@ -604,53 +567,12 @@ button:hover {
     nav li a {
         font-size: 19px;
     }
-    .video{
+
+    .video {
         margin: auto;
     }
 
-    .timeline:after {
-        left: 50%
-    }
 
-    .container {
-        padding: 10px;
-        position: relative;
-        width: 50%;
-        margin: 80px 0px;
-    }
-
-    .left::after {
-        left: 94.5%;
-        transform: translateX(50%);
-    }
-
-    .right::after {
-        left: 0%;
-        transform: translateX(-50%);
-    }
-
-    .right {
-        left: 50%;
-    }
-
-    .image {
-        position: absolute;
-        top: 15px;
-        width: 40%;
-        margin: 15px auto;
-    }
-
-    .image img {
-        width: 150%;
-    }
-
-    .container.left .image {
-        right: -75%;
-    }
-
-    .container.right .image {
-        left: -75%;
-    }
 
     .gallery {
         flex-direction: row;
@@ -662,6 +584,7 @@ button:hover {
         width: 200px;
         margin: 0;
     }
+
 }
 
 /* Számítógép nézet */
@@ -700,7 +623,13 @@ button:hover {
     #jbalvin article,
     #jordanpsg article {
         flex-basis: 60%;
-        margin: 4vh;
+        margin: 2vh;
+    }
+
+    #jordanpsg article,
+    #jordantravis article,
+    #jordan4 article {
+        order: 2;
     }
 
 
@@ -719,5 +648,28 @@ button:hover {
         justify-content: center;
     }
 
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+    }
 
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .container.left {
+        flex-direction: row;
+    }
+
+    .container.right {
+        flex-direction: row-reverse;
+    }
+
+    .content,
+    .image {
+        flex: 1 1 45%;
+    }
 }
